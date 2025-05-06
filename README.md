@@ -98,20 +98,4 @@ Ce projet est en développement actif. Si vous souhaitez contribuer, veuillez [d
 
 ## 📜 Licence
 
-[Choisissez une licence si vous le souhaitez, ex: MIT License]
-
----
-
-**Changements clés effectués pour améliorer la lisibilité :**
-
-1.  **Titres et Sous-titres :** Utilisation plus marquée de Markdown (`#`, `##`, `###`) pour une hiérarchie claire.
-2.  **Emojis :** Ajout d'émojis thématiques pour chaque section majeure, rendant le document plus engageant et facile à scanner.
-3.  **Mise en Gras :** Utilisation de `**gras**` pour les termes clés et les points importants.
-4.  **Listes à Puces :** Formatage cohérent des listes pour une meilleure digestibilité.
-5.  **Blocs de Code :** Les commandes shell sont clairement délimitées.
-6.  **Phrasé :** Quelques reformulations pour plus de clarté et de concision. Par exemple, la description initiale est plus directe.
-7.  **Mise en Évidence :** Les notes importantes (comme celle sur `localStorage` et `file://`) et les fonctionnalités à venir sont mises en évidence.
-8.  **Sections "Fonctionnalités Actuelles" et "Prochaines Étapes" :** Utilisation d'icônes (✅, 🎯) pour distinguer rapidement le statut.
-9.  **Espacement :** Assurer un espacement adéquat entre les sections.
-
-J'espère que cette version est plus agréable à lire !
+MIT
