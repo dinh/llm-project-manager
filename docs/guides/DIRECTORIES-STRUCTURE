@@ -1,4 +1,4 @@
-mi# Organiser Votre Documentation avec un Répertoire `docs/`
+# Organiser Votre Documentation avec un Répertoire `docs/`
 
 Adopter un répertoire `docs/` pour votre documentation est une **excellente pratique**. Cela contribue à maintenir la racine de votre projet propre, tout en rendant votre documentation plus organisée et facilement accessible. C'est un signe de maturité dans la gestion de projet, applicable même aux projets personnels.
 
