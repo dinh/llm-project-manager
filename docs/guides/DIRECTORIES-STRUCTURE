@@ -1,0 +1,53 @@
+**Un répertoire spécifique pour la documentation :**
+
+Créer un répertoire `docs/` est une excellente pratique. Cela maintient la racine de votre projet propre et rend votre documentation plus organisée et accessible. C'est un signe de maturité dans la gestion de projet, même pour des projets personnels.
+
+**Structure de Répertoire Suggérée :**
+
+```
+your-project-folder/
+├── .git/                  (si vous utilisez Git)
+├── docs/                  <-- Votre nouveau répertoire pour la documentation
+│   ├── PLAN.md            (Votre plan de développement V3.1 détaillé)
+│   ├── ARCHITECTURE.md    (Optionnel, si vous voulez détailler l'architecture technique ou des données plus en profondeur)
+│   ├── USER_GUIDE.md      (Optionnel, pour plus tard, comment utiliser l'application)
+│   └── CONTRIBUTING.md    (Optionnel, si vous ouvrez aux contributions)
+├── js/
+│   ├── main.js
+│   ├── App.js
+│   └── ... (autres fichiers et sous-répertoires JS)
+├── css/                   (si vous avez des CSS personnalisés en dehors de Tailwind)
+│   └── style.css
+├── index.html
+├── README.md              (Le README principal, plus concis)
+└── TODO.md                (Si vous utilisez cette méthode pour le suivi des tâches)
+```
+
+**Avantages de cette approche :**
+
+1.  **Clarté à la Racine :** La racine de votre projet reste épurée, contenant principalement le code source (`js/`, `index.html`), le `README.md` principal, et potentiellement des fichiers de configuration (`package.json` si vous utilisez npm, `.gitignore`, etc.).
+2.  **Centralisation de la Documentation :** Tous les documents de planification, d'architecture, guides utilisateurs, etc., sont regroupés au même endroit.
+3.  **Scalabilité :** Si votre documentation s'étoffe (par exemple, avec des diagrammes, des guides plus spécifiques), tout est déjà bien organisé.
+4.  **Facilité de Maintenance :** Il est plus simple de trouver et de mettre à jour les documents lorsqu'ils sont séparés du code source principal.
+5.  **Séparation des Préoccupations :** Le code c'est le code, la documentation c'est la documentation.
+
+**Comment mettre à jour votre `README.md` :**
+
+Vous devrez ajuster les liens dans votre `README.md` pour pointer vers les fichiers dans le répertoire `docs/`.
+
+Par exemple, la section pour le plan de développement deviendrait :
+
+```markdown
+## Plan de Développement / Roadmap
+
+Pour une vue détaillée des phases de développement, des fonctionnalités prévues et de la feuille de route du projet, veuillez consulter notre [Plan de Développement Détaillé](./docs/PLAN.md).
+
+Nous suivons actuellement la **Phase X** de ce plan.
+```
+
+**Autres documents que vous pourriez ajouter dans `docs/` au fil du temps :**
+
+*   `ARCHITECTURE.md`: Si vous voulez décrire plus en détail les interactions entre les modules JS, le flux de données, ou les décisions d'architecture spécifiques.
+*   `DATA_MODEL.md`: Si la description de la structure de `localStorage` dans `PLAN.md` devient trop longue, vous pouvez la dédier à un fichier.
+*   `USER_STORIES.md`: Si vous adoptez une approche basée sur les "user stories" pour définir les fonctionnalités.
+*   `DECISION_LOG.md`: Un journal des décisions d'architecture ou de conception importantes et leurs justifications.

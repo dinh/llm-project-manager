@@ -1,0 +1,1 @@
+(Optionnel, pour plus tard, comment utiliser l'application elle-même)

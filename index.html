@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>LLM Project Manager</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CSS personnalisé -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+  <!-- En-tête de l'application -->
+  <header class="bg-indigo-600 text-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">LLM Project Manager</h1>
+      <nav id="nav">
+        <ul class="flex space-x-4">
+          <li><button data-view="dashboard" class="px-3 py-1 rounded hover:bg-indigo-700 active">Tableau de bord</button></li>
+          <li><button data-view="projects" class="px-3 py-1 rounded hover:bg-indigo-700">Projets</button></li>
+          <li><button data-view="prompts" class="px-3 py-1 rounded hover:bg-indigo-700">Prompts</button></li>
+          <li><button data-view="templates" class="px-3 py-1 rounded hover:bg-indigo-700">Templates</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Conteneur principal -->
+  <main class="container mx-auto px-4 py-6 flex-grow">
+    <div id="app-container">
+      <!-- Conteneur pour les vues -->
+      <div id="view-container" class="mb-6">
+        <!-- Vue par défaut (Dashboard) -->
+        <div id="view-dashboard" class="view active">
+          <h2 class="text-2xl font-bold mb-4">Tableau de bord</h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Statistiques -->
+            <div class="bg-white p-4 rounded shadow">
+              <h3 class="font-bold text-lg mb-2">Projets</h3>
+              <p class="text-3xl font-bold text-indigo-600"><span id="stats-projects">0</span></p>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+              <h3 class="font-bold text-lg mb-2">Prompts</h3>
+              <p class="text-3xl font-bold text-indigo-600"><span id="stats-prompts">0</span></p>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+              <h3 class="font-bold text-lg mb-2">Templates</h3>
+              <p class="text-3xl font-bold text-indigo-600"><span id="stats-templates">0</span></p>
+            </div>
+          </div>
+
+          <!-- Actions rapides -->
+          <div class="mt-6">
+            <h3 class="text-xl font-bold mb-3">Actions rapides</h3>
+            <div class="flex flex-wrap gap-3">
+              <button id="quick-new-project" class="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">
+                <i class="fa-solid fa-plus mr-2"></i>Nouveau projet
+              </button>
+              <button id="quick-new-prompt" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">
+                <i class="fa-solid fa-plus mr-2"></i>Nouveau prompt
+              </button>
+              <button id="quick-new-template" class="bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700">
+                <i class="fa-solid fa-plus mr-2"></i>Nouveau template
+              </button>
+            </div>
+          </div>
+
+          <!-- Projets récents -->
+          <div class="mt-6">
+            <h3 class="text-xl font-bold mb-3">Projets récents</h3>
+            <div id="recent-projects" class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white p-4 rounded shadow">
+                <p class="text-gray-500 italic">Chargement...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prompts favoris -->
+          <div class="mt-6">
+            <h3 class="text-xl font-bold mb-3">Prompts favoris</h3>
+            <div id="favorite-prompts" class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white p-4 rounded shadow">
+                <p class="text-gray-500 italic">Chargement...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vue Projets -->
+        <div id="view-projects" class="view">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-bold">Gestion des projets</h2>
+            <button id="view-projects-add" class="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700">
+              <i class="fa-solid fa-plus mr-2"></i>Nouveau Projet
+            </button>
+          </div>
+          <div id="projects-list" class="space-y-4">
+            <p class="text-gray-500 italic">Chargement des projets...</p>
+          </div>
+        </div>
+
+        <!-- Vue Prompts -->
+        <div id="view-prompts" class="view">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-bold">Catalogue de prompts</h2>
+            <button id="view-prompts-add" class="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">
+              <i class="fa-solid fa-plus mr-2"></i>Nouveau Prompt
+            </button>
+          </div>
+          <div id="prompts-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <p class="text-gray-500 italic">Chargement des prompts...</p>
+          </div>
+        </div>
+
+        <!-- Vue Templates -->
+        <div id="view-templates" class="view">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-2xl font-bold">Bibliothèque de templates</h2>
+            <button id="view-templates-add" class="bg-purple-600 text-white px-4 py-2 rounded shadow hover:bg-purple-700">
+              <i class="fa-solid fa-plus mr-2"></i>Nouveau Template
+            </button>
+          </div>
+          <div id="templates-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <p class="text-gray-500 italic">Chargement des templates...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-gray-800 text-white py-4 mt-auto">
+    <div class="container mx-auto px-4 text-center">
+      <p>LLM Project Manager - Version 1.0</p>
+    </div>
+  </footer>
+
+  <!-- Système de modales -->
+  <div id="modal-container" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div id="modal-content-wrapper" class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6">
+      <!-- Contenu de la modale injecté dynamiquement -->
+    </div>
+  </div>
+
+  <!-- Système de notifications/toasts -->
+  <div id="toast-container" class="fixed bottom-4 right-4 z-[60] space-y-2">
+    <!-- Les toasts seront injectés ici -->
+  </div>
+
+  <!-- Scripts JS -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

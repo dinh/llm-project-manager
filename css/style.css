@@ -1,0 +1,35 @@
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+#nav button.active {
+  background-color: #4338ca; /* indigo-700 */
+}
+
+/* Simple fade-in for modals */
+#modal-container {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Custom scrollbar for modal content if needed */
+#modal-content-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+#modal-content-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#modal-content-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+#modal-content-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
