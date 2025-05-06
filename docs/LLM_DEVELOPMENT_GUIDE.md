@@ -1,15 +1,3 @@
-1.  **Table des Matières (TOC) :** Ajoutée au début pour une navigation facile.
-2.  **Hiérarchie des Titres :** Utilisation plus marquée des niveaux de titres Markdown (`#`, `##`, `###`, `####`) pour une meilleure structure visuelle.
-3.  **Mise en Évidence :** Utilisation cohérente de `**gras**` pour les termes clés et les titres de sous-sections, et `*italique*` ou `<code>code</code>` pour les exemples, les noms de fichiers et les concepts spécifiques.
-4.  **Listes :** Maintien des listes à puces et numérotées pour la clarté, avec une indentation cohérente.
-5.  **Blocs d'Exemples :** Les exemples de prompts ou de code sont souvent mis en retrait ou formatés de manière distincte.
-6.  **Séparateurs :** Utilisation de `---` pour séparer visuellement les grandes sections.
-7.  **Lisibilité des Paragraphes :** Quelques légers ajustements pour scinder des paragraphes un peu longs si nécessaire, bien que le texte original soit déjà bien structuré.
-
-Voici le document reformaté :
-
----
-
 # Guide Pratique : Intégrer les LLM dans Votre Workflow de Développement Logiciel
 
 **Table des Matières**
